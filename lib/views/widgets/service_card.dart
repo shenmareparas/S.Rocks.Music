@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:developer' as developer;
 import '../../models/service.dart';
 import '../service_detail_screen.dart';
 
@@ -26,48 +27,70 @@ class ServiceCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
         ),
         margin: EdgeInsets.only(bottom: 16),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Row(
-            children: [
-              Image.asset(
-                service.iconPath,
-                width: 40,
-                height: 40,
-                errorBuilder: (context, error, stackTrace) => Icon(Icons.error),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            image: DecorationImage(
+              image: AssetImage(service.bannerPath),
+              fit: BoxFit.cover,
+              opacity: 0.1,
+              colorFilter: ColorFilter.mode(
+                Colors.black.withOpacity(0.5),
+                BlendMode.dstATop,
               ),
-              SizedBox(width: 16),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      service.title,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      service.description,
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ],
+              onError: (exception, stackTrace) {
+                developer.log(
+                  'Failed to load background image: ${service.bannerPath}',
+                  name: 'ServiceCard',
+                  error: exception,
+                  stackTrace: stackTrace,
+                );
+              },
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: Row(
+              children: [
+                Image.asset(
+                  service.iconPath,
+                  width: 46,
+                  height: 47,
+                  errorBuilder: (context, error, stackTrace) => Icon(Icons.error),
                 ),
-              ),
-              Image.asset(
-                'assets/icons/arrow_right.png',
-                width: 33,
-                height: 33,
-                // color: Colors.white,
-                errorBuilder: (context, error, stackTrace) => Icon(Icons.error),
-              ),
-            ],
+                SizedBox(width: 16),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        service.title,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                        service.description,
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 13,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Image.asset(
+                  'assets/icons/arrow_right.png',
+                  width: 33,
+                  height: 33,
+                  color: Colors.grey,
+                  errorBuilder: (context, error, stackTrace) => Icon(Icons.error),
+                ),
+              ],
+            ),
           ),
         ),
       ),
