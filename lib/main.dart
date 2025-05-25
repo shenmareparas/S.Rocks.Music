@@ -9,9 +9,7 @@ void main() async {
   await Firebase.initializeApp();
   runApp(
     MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => ServiceViewModel()),
-      ],
+      providers: [ChangeNotifierProvider(create: (_) => ServiceViewModel())],
       child: MyApp(),
     ),
   );

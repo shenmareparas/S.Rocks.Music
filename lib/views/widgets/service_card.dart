@@ -15,17 +15,14 @@ class ServiceCard extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => ServiceDetailScreen(
-              serviceTitle: service.title,
-            ),
+            builder: (context) =>
+                ServiceDetailScreen(serviceTitle: service.title),
           ),
         );
       },
       child: Card(
         color: Colors.grey[900],
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         margin: EdgeInsets.only(bottom: 16),
         child: Container(
           decoration: BoxDecoration(
@@ -56,7 +53,8 @@ class ServiceCard extends StatelessWidget {
                   service.iconPath,
                   width: 46,
                   height: 47,
-                  errorBuilder: (context, error, stackTrace) => Icon(Icons.error),
+                  errorBuilder: (context, error, stackTrace) =>
+                      Icon(Icons.error),
                 ),
                 SizedBox(width: 16),
                 Expanded(
@@ -74,10 +72,7 @@ class ServiceCard extends StatelessWidget {
                       SizedBox(height: 4),
                       Text(
                         service.description,
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 13,
-                        ),
+                        style: TextStyle(color: Colors.grey, fontSize: 13),
                       ),
                     ],
                   ),
@@ -87,7 +82,8 @@ class ServiceCard extends StatelessWidget {
                   width: 33,
                   height: 33,
                   color: Colors.grey,
-                  errorBuilder: (context, error, stackTrace) => Icon(Icons.error),
+                  errorBuilder: (context, error, stackTrace) =>
+                      Icon(Icons.error),
                 ),
               ],
             ),
