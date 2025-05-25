@@ -26,11 +26,12 @@ class BannerSection extends StatelessWidget {
           ),
           SizedBox(height: 13),
           Text(
-            'FREE DEMO',
+            'Free Demo',
             style: TextStyle(
+              fontFamily: 'Lobster',
               color: Colors.white,
               fontSize: 45,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.normal,
             ),
             textAlign: TextAlign.center,
           ),
