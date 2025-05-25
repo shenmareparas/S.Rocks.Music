@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'dart:developer' as developer;
 import '../../models/service.dart';
 import '../service_detail_screen.dart';
@@ -32,8 +33,8 @@ class ServiceCard extends StatelessWidget {
               fit: BoxFit.cover,
               opacity: 0.1,
               colorFilter: ColorFilter.mode(
-                Colors.black.withOpacity(0.5),
-                BlendMode.dstATop,
+                Color(0xFF202126),
+                BlendMode.overlay,
               ),
               onError: (exception, stackTrace) {
                 developer.log(
@@ -77,14 +78,7 @@ class ServiceCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                Image.asset(
-                  'assets/icons/arrow_right.png',
-                  width: 33,
-                  height: 33,
-                  color: Colors.grey,
-                  errorBuilder: (context, error, stackTrace) =>
-                      Icon(Icons.error),
-                ),
+                SvgPicture.asset('assets/icons/arrow.svg'),
               ],
             ),
           ),

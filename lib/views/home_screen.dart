@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import '../viewmodels/service_viewmodel.dart';
 import 'widgets/service_card.dart';
@@ -37,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                               color: Color(0xFF45454F),
                               margin: EdgeInsets.symmetric(horizontal: 8),
                             ),
-                            Icon(Icons.mic, color: Colors.white, size: 20),
+                            Icon(Icons.mic, color: Colors.white, size: 25),
                           ],
                         ),
                         filled: true,
@@ -54,10 +55,10 @@ class HomeScreen extends StatelessWidget {
                   CircleAvatar(
                     radius: 20,
                     backgroundColor: Color(0xFFEADDFF),
-                    child: Icon(
-                      Icons.person_outline,
-                      color: Color(0xFF4F378A),
-                      size: 30,
+                    child: SvgPicture.asset(
+                      'assets/icons/profile.svg',
+                      height: 30,
+                      width: 30,
                     ),
                   ),
                 ],
@@ -158,13 +159,31 @@ class HomeScreen extends StatelessWidget {
         selectedItemColor: Colors.white,
         unselectedItemColor: Color(0xFF61616B),
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.newspaper), label: 'News'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.music_note),
-            label: 'TrackBox',
+            icon: Image.asset(
+              'assets/icons/home.png',
+              width: 23,
+              height: 23,
+              errorBuilder: (context, error, stackTrace) => Icon(Icons.error),
+            ),
+            label: 'Home',
+            tooltip: 'Home',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.folder), label: 'Projects'),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset('assets/icons/news.svg'),
+            label: 'News',
+            tooltip: 'News',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset('assets/icons/trackbox.svg'),
+            label: 'TrackBox',
+            tooltip: 'TrackBox',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset('assets/icons/projects.svg'),
+            label: 'Projects',
+            tooltip: 'Projects',
+          ),
         ],
       ),
     );
