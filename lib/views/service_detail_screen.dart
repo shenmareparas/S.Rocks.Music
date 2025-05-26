@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class ServiceDetailScreen extends StatelessWidget {
   final String serviceTitle;
 
-  const ServiceDetailScreen({Key? key, required this.serviceTitle})
-    : super(key: key);
+  const ServiceDetailScreen({super.key, required this.serviceTitle});
 
   @override
   Widget build(BuildContext context) {

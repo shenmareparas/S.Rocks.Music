@@ -7,7 +7,7 @@ import '../service_detail_screen.dart';
 class ServiceCard extends StatelessWidget {
   final Service service;
 
-  const ServiceCard({Key? key, required this.service}) : super(key: key);
+  const ServiceCard({super.key, required this.service});
 
   @override
   Widget build(BuildContext context) {
