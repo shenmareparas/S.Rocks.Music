@@ -2,12 +2,20 @@
 
 This Flutter app connects users with professional music services, offering features like music production, mixing, mastering, lyrics writing, and vocals. The app integrates Firebase for backend services and uses the Provider package for state management.
 
-## Screenshots
+## Preview
+
+https://github.com/user-attachments/assets/9f6b0939-a049-4993-b8bb-13cff8b553ea
 
 <table>
   <tr>
-    <td><video alt='Video' src="assets/github_readme/video.mp4" width="250" controls></video></td>
-    <td><img alt='Orignal' src="assets/github_readme/orignal.png" width="250"/></td> 
+    <td>Orignal Image</td>
+  </tr>
+  <tr>
+    <td><img alt='Orignal' src="assets/github_readme/orignal.png" width="250"/></td>
+  </tr>
+  <tr>
+    <td>Screen 1</td>
+    <td>Screen 2</td>
   </tr>
   <tr>
     <td><img alt='Screen 1' src="assets/github_readme/screen_1.png" width="250"/></td>
