@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import '../models/service.dart';
 import '../repositories/service_repository.dart';
+import '../di.dart';
 
 class ServiceViewModel extends ChangeNotifier {
-  final ServiceRepository _repository = ServiceRepository();
+  final ServiceRepository _repository = getIt<ServiceRepository>();
   List<Service> _services = [];
   bool _isLoading = false;
   String? _error;
