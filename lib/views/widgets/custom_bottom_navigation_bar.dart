@@ -14,9 +14,9 @@ class CustomBottomNavigationBar extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           border: Border(top: BorderSide(color: Color(0xFF61616B), width: 1.0)),
-          color: Color(0xFF18171C),
         ),
         child: BottomNavigationBar(
+          backgroundColor: Color(0xFF18171C),
           showUnselectedLabels: true,
           selectedItemColor: Colors.white,
           unselectedItemColor: Color(0xFF61616B),

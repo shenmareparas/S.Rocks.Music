@@ -18,17 +18,41 @@ class HomeScreen extends StatelessWidget {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xFF18171C),
         body: SafeArea(
           child: Column(
             children: [
-              // Search Bar
-              CustomSearchBar(),
-              // Banner
-              BannerSection(),
+              Stack(
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.35,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Color(0xFFA90140), // Starting color
+                          Color(0xFF550120), // Ending color
+                        ],
+                      ),
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(20),
+                        bottomRight: Radius.circular(20),
+                      ),
+                    ),
+                  ),
+                  Column(
+                    children: [
+                      CustomSearchBar(),
+                      SizedBox(height: 18),
+                      BannerSection(),
+                    ],
+                  ),
+                ],
+              ),
               // Services Section
               Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(24),
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
@@ -47,13 +71,13 @@ class HomeScreen extends StatelessWidget {
                     : viewModel.error != null
                     ? Center(child: Text('Error: ${viewModel.error}'))
                     : ListView.builder(
-                  padding: EdgeInsets.symmetric(horizontal: 16),
-                  itemCount: viewModel.services.length,
-                  itemBuilder: (context, index) {
-                    final service = viewModel.services[index];
-                    return ServiceCard(service: service);
-                  },
-                ),
+                        padding: EdgeInsets.symmetric(horizontal: 30),
+                        itemCount: viewModel.services.length,
+                        itemBuilder: (context, index) {
+                          final service = viewModel.services[index];
+                          return ServiceCard(service: service);
+                        },
+                      ),
               ),
             ],
           ),

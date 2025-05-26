@@ -7,19 +7,15 @@ class CustomSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 11),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 11),
       child: Row(
         children: [
           Expanded(
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'Search "Punjabi Lyrics"',
-                hintStyle: TextStyle(color: Colors.grey),
-                prefixIcon: Icon(
-                  Icons.search,
-                  color: Colors.white,
-                  size: 25,
-                ),
+                hintStyle: TextStyle(color: Color(0xFF61616B)),
+                prefixIcon: Icon(Icons.search, color: Colors.white, size: 25),
                 suffixIcon: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -29,7 +25,10 @@ class CustomSearchBar extends StatelessWidget {
                       color: Color(0xFF45454F),
                       margin: EdgeInsets.symmetric(horizontal: 8),
                     ),
-                    Icon(Icons.mic, color: Colors.white, size: 25),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 12),
+                      child: Icon(Icons.mic, color: Colors.white, size: 25),
+                    ),
                   ],
                 ),
                 filled: true,

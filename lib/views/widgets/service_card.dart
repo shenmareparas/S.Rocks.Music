@@ -57,7 +57,7 @@ class ServiceCard extends StatelessWidget {
                   errorBuilder: (context, error, stackTrace) =>
                       Icon(Icons.error),
                 ),
-                SizedBox(width: 16),
+                SizedBox(width: 10),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,7 +70,7 @@ class ServiceCard extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 4),
+                      // SizedBox(height: 4),
                       Text(
                         service.description,
                         style: TextStyle(color: Colors.grey, fontSize: 13),
@@ -78,7 +78,10 @@ class ServiceCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                SvgPicture.asset('assets/icons/arrow.svg'),
+                Padding(
+                  padding: const EdgeInsets.only(right: 5),
+                  child: SvgPicture.asset('assets/icons/arrow.svg'),
+                ),
               ],
             ),
           ),
