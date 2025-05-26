@@ -6,7 +6,7 @@ This Flutter app connects users with professional music services, offering featu
 
 <table>
   <tr>
-    <td><video alt='Video' src="assets/github_readme/video.webm" width="250" controls></video></td>
+    <td><video alt='Video' src="assets/github_readme/video.mp4" width="250" controls></video></td>
     <td><img alt='Orignal' src="assets/github_readme/orignal.png" width="250"/></td> 
   </tr>
   <tr>
